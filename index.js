@@ -13,14 +13,15 @@ app.post('/api/v1/quiz', function (req, res) {
   const answer = req.body.answer;
   if (answer === '2') {
     // res.send('<h1>正解</h1>');
-    res.redirect("/correct.html")
+    res.redirect('/correct.html');
   } else {
     // res.send('不正解');
-    res.redirect("/wrong.html")
+    res.redirect('/wrong.html');
   }
 });
 
-app.listen(3000, () => {
+const PROT = process.env.PROT || 3000;
+app.listen(PROT, () => {
   console.log('I am running!');
 });
 
